@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projeto_Agenda_2025.Formularios
 {
-    public partial class frmCadbPessoa : Form
+    public partial class frmCadPessoas : Form
     {
-        public frmCadbPessoa()
+        public frmCadPessoas()
         {
             InitializeComponent();
         }
@@ -31,5 +31,7 @@ namespace Projeto_Agenda_2025.Formularios
             this.pessoaTableAdapter.Fill(this.dataSet_Agenda.Pessoa);
 
         }
+
+       
     }
 }

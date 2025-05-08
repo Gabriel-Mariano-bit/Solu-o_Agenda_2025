@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPessoas));
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label enderecoLabel;
@@ -40,14 +41,19 @@
             this.pessoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pessoaTableAdapter = new Projeto_Agenda_2025.Dados.DataSet_AgendaTableAdapters.PessoaTableAdapter();
             this.tableAdapterManager = new Projeto_Agenda_2025.Dados.DataSet_AgendaTableAdapters.TableAdapterManager();
-            this.pessoaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.nomeTextBox = new System.Windows.Forms.TextBox();
-            this.enderecoTextBox = new System.Windows.Forms.TextBox();
-            this.cidadeTextBox = new System.Windows.Forms.TextBox();
-            this.telefoneTextBox = new System.Windows.Forms.TextBox();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.dataNascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.pessoaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.pessoaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.pessoaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +62,13 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.enderecoTextBox = new System.Windows.Forms.TextBox();
+            this.cidadeTextBox = new System.Windows.Forms.TextBox();
+            this.telefoneTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.dataNascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             idLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             enderecoLabel = new System.Windows.Forms.Label();
@@ -65,7 +78,8 @@
             dataNascimentoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Agenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingNavigator)).BeginInit();
+            this.pessoaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pessoaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +87,11 @@
             // 
             this.dataSet_Agenda.DataSetName = "DataSet_Agenda";
             this.dataSet_Agenda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pessoaBindingSource
+            // 
+            this.pessoaBindingSource.DataMember = "Pessoa";
+            this.pessoaBindingSource.DataSource = this.dataSet_Agenda;
             // 
             // pessoaTableAdapter
             // 
@@ -84,129 +103,132 @@
             this.tableAdapterManager.PessoaTableAdapter = this.pessoaTableAdapter;
             this.tableAdapterManager.UpdateOrder = Projeto_Agenda_2025.Dados.DataSet_AgendaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // pessoaBindingSource1
+            // pessoaBindingNavigator
             // 
-            this.pessoaBindingSource1.DataMember = "Pessoa";
-            this.pessoaBindingSource1.DataSource = this.dataSet_Agenda;
+            this.pessoaBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.pessoaBindingNavigator.BindingSource = this.pessoaBindingSource;
+            this.pessoaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.pessoaBindingNavigator.DeleteItem = null;
+            this.pessoaBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.pessoaBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.pessoaBindingNavigatorSaveItem});
+            this.pessoaBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.pessoaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.pessoaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.pessoaBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.pessoaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.pessoaBindingNavigator.Name = "pessoaBindingNavigator";
+            this.pessoaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.pessoaBindingNavigator.Size = new System.Drawing.Size(1153, 38);
+            this.pessoaBindingNavigator.TabIndex = 14;
+            this.pessoaBindingNavigator.Text = "bindingNavigator1";
             // 
-            // idLabel
+            // bindingNavigatorMoveFirstItem
             // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(103, 109);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(30, 20);
-            idLabel.TabIndex = 0;
-            idLabel.Text = "ID:";
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
-            // idTextBox
+            // bindingNavigatorMovePreviousItem
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource1, "id", true));
-            this.idTextBox.Location = new System.Drawing.Point(245, 106);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(200, 26);
-            this.idTextBox.TabIndex = 1;
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
-            // nomeLabel
+            // bindingNavigatorSeparator
             // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(103, 141);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(55, 20);
-            nomeLabel.TabIndex = 2;
-            nomeLabel.Text = "Nome:";
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 38);
             // 
-            // nomeTextBox
+            // bindingNavigatorPositionItem
             // 
-            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource1, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(245, 138);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(200, 26);
-            this.nomeTextBox.TabIndex = 3;
+            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 31);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
-            // enderecoLabel
+            // bindingNavigatorCountItem
             // 
-            enderecoLabel.AutoSize = true;
-            enderecoLabel.Location = new System.Drawing.Point(103, 173);
-            enderecoLabel.Name = "enderecoLabel";
-            enderecoLabel.Size = new System.Drawing.Size(82, 20);
-            enderecoLabel.TabIndex = 4;
-            enderecoLabel.Text = "Endereco:";
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(57, 33);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
-            // enderecoTextBox
+            // bindingNavigatorSeparator1
             // 
-            this.enderecoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource1, "Endereco", true));
-            this.enderecoTextBox.Location = new System.Drawing.Point(245, 170);
-            this.enderecoTextBox.Name = "enderecoTextBox";
-            this.enderecoTextBox.Size = new System.Drawing.Size(200, 26);
-            this.enderecoTextBox.TabIndex = 5;
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 38);
             // 
-            // cidadeLabel
+            // bindingNavigatorMoveNextItem
             // 
-            cidadeLabel.AutoSize = true;
-            cidadeLabel.Location = new System.Drawing.Point(103, 205);
-            cidadeLabel.Name = "cidadeLabel";
-            cidadeLabel.Size = new System.Drawing.Size(63, 20);
-            cidadeLabel.TabIndex = 6;
-            cidadeLabel.Text = "Cidade:";
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
-            // cidadeTextBox
+            // bindingNavigatorMoveLastItem
             // 
-            this.cidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource1, "Cidade", true));
-            this.cidadeTextBox.Location = new System.Drawing.Point(245, 202);
-            this.cidadeTextBox.Name = "cidadeTextBox";
-            this.cidadeTextBox.Size = new System.Drawing.Size(200, 26);
-            this.cidadeTextBox.TabIndex = 7;
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
-            // telefoneLabel
+            // bindingNavigatorSeparator2
             // 
-            telefoneLabel.AutoSize = true;
-            telefoneLabel.Location = new System.Drawing.Point(103, 237);
-            telefoneLabel.Name = "telefoneLabel";
-            telefoneLabel.Size = new System.Drawing.Size(75, 20);
-            telefoneLabel.TabIndex = 8;
-            telefoneLabel.Text = "Telefone:";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 38);
             // 
-            // telefoneTextBox
+            // bindingNavigatorAddNewItem
             // 
-            this.telefoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource1, "Telefone", true));
-            this.telefoneTextBox.Location = new System.Drawing.Point(245, 234);
-            this.telefoneTextBox.Name = "telefoneTextBox";
-            this.telefoneTextBox.Size = new System.Drawing.Size(200, 26);
-            this.telefoneTextBox.TabIndex = 9;
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
-            // emailLabel
+            // bindingNavigatorDeleteItem
             // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(103, 269);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(52, 20);
-            emailLabel.TabIndex = 10;
-            emailLabel.Text = "Email:";
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
-            // emailTextBox
+            // pessoaBindingNavigatorSaveItem
             // 
-            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource1, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(245, 266);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(200, 26);
-            this.emailTextBox.TabIndex = 11;
-            // 
-            // dataNascimentoLabel
-            // 
-            dataNascimentoLabel.AutoSize = true;
-            dataNascimentoLabel.Location = new System.Drawing.Point(103, 302);
-            dataNascimentoLabel.Name = "dataNascimentoLabel";
-            dataNascimentoLabel.Size = new System.Drawing.Size(136, 20);
-            dataNascimentoLabel.TabIndex = 12;
-            dataNascimentoLabel.Text = "Data Nascimento:";
-            // 
-            // dataNascimentoDateTimePicker
-            // 
-            this.dataNascimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pessoaBindingSource1, "DataNascimento", true));
-            this.dataNascimentoDateTimePicker.Location = new System.Drawing.Point(245, 298);
-            this.dataNascimentoDateTimePicker.Name = "dataNascimentoDateTimePicker";
-            this.dataNascimentoDateTimePicker.Size = new System.Drawing.Size(200, 26);
-            this.dataNascimentoDateTimePicker.TabIndex = 13;
+            this.pessoaBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pessoaBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("pessoaBindingNavigatorSaveItem.Image")));
+            this.pessoaBindingNavigatorSaveItem.Name = "pessoaBindingNavigatorSaveItem";
+            this.pessoaBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 33);
+            this.pessoaBindingNavigatorSaveItem.Text = "Salvar Dados";
+            this.pessoaBindingNavigatorSaveItem.Click += new System.EventHandler(this.pessoaBindingNavigatorSaveItem_Click_1);
             // 
             // pessoaDataGridView
             // 
@@ -220,13 +242,13 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
-            this.pessoaDataGridView.DataSource = this.pessoaBindingSource1;
-            this.pessoaDataGridView.Location = new System.Drawing.Point(12, 429);
+            this.pessoaDataGridView.DataSource = this.pessoaBindingSource;
+            this.pessoaDataGridView.Location = new System.Drawing.Point(21, 419);
             this.pessoaDataGridView.Name = "pessoaDataGridView";
             this.pessoaDataGridView.RowHeadersWidth = 62;
             this.pessoaDataGridView.RowTemplate.Height = 28;
-            this.pessoaDataGridView.Size = new System.Drawing.Size(1118, 242);
-            this.pessoaDataGridView.TabIndex = 14;
+            this.pessoaDataGridView.Size = new System.Drawing.Size(1110, 216);
+            this.pessoaDataGridView.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -285,12 +307,131 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Width = 150;
             // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(76, 84);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(30, 20);
+            idLabel.TabIndex = 15;
+            idLabel.Text = "ID:";
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource, "id", true));
+            this.idTextBox.Location = new System.Drawing.Point(218, 81);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(200, 26);
+            this.idTextBox.TabIndex = 16;
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(76, 116);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(55, 20);
+            nomeLabel.TabIndex = 17;
+            nomeLabel.Text = "Nome:";
+            // 
+            // nomeTextBox
+            // 
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource, "Nome", true));
+            this.nomeTextBox.Location = new System.Drawing.Point(218, 113);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(200, 26);
+            this.nomeTextBox.TabIndex = 18;
+            // 
+            // enderecoLabel
+            // 
+            enderecoLabel.AutoSize = true;
+            enderecoLabel.Location = new System.Drawing.Point(76, 148);
+            enderecoLabel.Name = "enderecoLabel";
+            enderecoLabel.Size = new System.Drawing.Size(82, 20);
+            enderecoLabel.TabIndex = 19;
+            enderecoLabel.Text = "Endereco:";
+            // 
+            // enderecoTextBox
+            // 
+            this.enderecoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource, "Endereco", true));
+            this.enderecoTextBox.Location = new System.Drawing.Point(218, 145);
+            this.enderecoTextBox.Name = "enderecoTextBox";
+            this.enderecoTextBox.Size = new System.Drawing.Size(200, 26);
+            this.enderecoTextBox.TabIndex = 20;
+            // 
+            // cidadeLabel
+            // 
+            cidadeLabel.AutoSize = true;
+            cidadeLabel.Location = new System.Drawing.Point(76, 180);
+            cidadeLabel.Name = "cidadeLabel";
+            cidadeLabel.Size = new System.Drawing.Size(63, 20);
+            cidadeLabel.TabIndex = 21;
+            cidadeLabel.Text = "Cidade:";
+            // 
+            // cidadeTextBox
+            // 
+            this.cidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource, "Cidade", true));
+            this.cidadeTextBox.Location = new System.Drawing.Point(218, 177);
+            this.cidadeTextBox.Name = "cidadeTextBox";
+            this.cidadeTextBox.Size = new System.Drawing.Size(200, 26);
+            this.cidadeTextBox.TabIndex = 22;
+            // 
+            // telefoneLabel
+            // 
+            telefoneLabel.AutoSize = true;
+            telefoneLabel.Location = new System.Drawing.Point(76, 212);
+            telefoneLabel.Name = "telefoneLabel";
+            telefoneLabel.Size = new System.Drawing.Size(75, 20);
+            telefoneLabel.TabIndex = 23;
+            telefoneLabel.Text = "Telefone:";
+            // 
+            // telefoneTextBox
+            // 
+            this.telefoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource, "Telefone", true));
+            this.telefoneTextBox.Location = new System.Drawing.Point(218, 209);
+            this.telefoneTextBox.Name = "telefoneTextBox";
+            this.telefoneTextBox.Size = new System.Drawing.Size(200, 26);
+            this.telefoneTextBox.TabIndex = 24;
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(76, 244);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(52, 20);
+            emailLabel.TabIndex = 25;
+            emailLabel.Text = "Email:";
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoaBindingSource, "Email", true));
+            this.emailTextBox.Location = new System.Drawing.Point(218, 241);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(200, 26);
+            this.emailTextBox.TabIndex = 26;
+            // 
+            // dataNascimentoLabel
+            // 
+            dataNascimentoLabel.AutoSize = true;
+            dataNascimentoLabel.Location = new System.Drawing.Point(76, 277);
+            dataNascimentoLabel.Name = "dataNascimentoLabel";
+            dataNascimentoLabel.Size = new System.Drawing.Size(136, 20);
+            dataNascimentoLabel.TabIndex = 27;
+            dataNascimentoLabel.Text = "Data Nascimento:";
+            // 
+            // dataNascimentoDateTimePicker
+            // 
+            this.dataNascimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pessoaBindingSource, "DataNascimento", true));
+            this.dataNascimentoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataNascimentoDateTimePicker.Location = new System.Drawing.Point(218, 273);
+            this.dataNascimentoDateTimePicker.Name = "dataNascimentoDateTimePicker";
+            this.dataNascimentoDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.dataNascimentoDateTimePicker.TabIndex = 28;
+            // 
             // frmCadPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 693);
-            this.Controls.Add(this.pessoaDataGridView);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(nomeLabel);
@@ -305,12 +446,16 @@
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(dataNascimentoLabel);
             this.Controls.Add(this.dataNascimentoDateTimePicker);
+            this.Controls.Add(this.pessoaDataGridView);
+            this.Controls.Add(this.pessoaBindingNavigator);
             this.Name = "frmCadPessoas";
             this.Text = "Cadastro de Pessoas";
-            this.Load += new System.EventHandler(this.frmCadbPessoa_Load);
+            this.Load += new System.EventHandler(this.frmCadPessoas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Agenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingNavigator)).EndInit();
+            this.pessoaBindingNavigator.ResumeLayout(false);
+            this.pessoaBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pessoaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -318,11 +463,6 @@
         }
 
         #endregion
-
-        private Dados.DataSet_Agenda dataSet_Agenda;
-        private System.Windows.Forms.BindingSource pessoaBindingSource;
-        private Dados.DataSet_AgendaTableAdapters.PessoaTableAdapter pessoaTableAdapter;
-        private Dados.DataSet_AgendaTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -330,14 +470,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource pessoaBindingSource1;
-        private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TextBox nomeTextBox;
-        private System.Windows.Forms.TextBox enderecoTextBox;
-        private System.Windows.Forms.TextBox cidadeTextBox;
-        private System.Windows.Forms.TextBox telefoneTextBox;
-        private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.DateTimePicker dataNascimentoDateTimePicker;
+        private Dados.DataSet_Agenda dataSet_Agenda;
+        private System.Windows.Forms.BindingSource pessoaBindingSource;
+        private Dados.DataSet_AgendaTableAdapters.PessoaTableAdapter pessoaTableAdapter;
+        private Dados.DataSet_AgendaTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator pessoaBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton pessoaBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView pessoaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -346,5 +495,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox nomeTextBox;
+        private System.Windows.Forms.TextBox enderecoTextBox;
+        private System.Windows.Forms.TextBox cidadeTextBox;
+        private System.Windows.Forms.TextBox telefoneTextBox;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.DateTimePicker dataNascimentoDateTimePicker;
     }
 }

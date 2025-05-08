@@ -25,13 +25,29 @@ namespace Projeto_Agenda_2025.Formularios
 
         }
 
-        private void frmCadbPessoa_Load(object sender, EventArgs e)
+        private void pessoaBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.pessoaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataSet_Agenda);
+
+        }
+
+        private void frmCadPessoas_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSet_Agenda.Pessoa'. Você pode movê-la ou removê-la conforme necessário.
             this.pessoaTableAdapter.Fill(this.dataSet_Agenda.Pessoa);
 
         }
 
-       
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma Exclusão?", "Excluindo registro...",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                pessoaBindingSource.RemoveCurrent();
+                this.tableAdapterManager.UpdateAll(this.dataSet_Agenda);
+            }
+        }
     }
 }

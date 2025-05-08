@@ -130,7 +130,7 @@
             this.pessoaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.pessoaBindingNavigator.Name = "pessoaBindingNavigator";
             this.pessoaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.pessoaBindingNavigator.Size = new System.Drawing.Size(1153, 38);
+            this.pessoaBindingNavigator.Size = new System.Drawing.Size(1153, 33);
             this.pessoaBindingNavigator.TabIndex = 14;
             this.pessoaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -208,7 +208,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // bindingNavigatorDeleteItem

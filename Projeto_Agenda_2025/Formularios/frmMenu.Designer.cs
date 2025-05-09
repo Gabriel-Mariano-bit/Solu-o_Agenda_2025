@@ -35,6 +35,7 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pessoasfiltroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.relatóriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,7 +60,7 @@
             this.toolStripMenuItem1,
             this.sairToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(107, 32);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // pessoasToolStripMenuItem
@@ -82,15 +83,24 @@
             // 
             // consultasToolStripMenuItem
             // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pessoasfiltroToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(105, 32);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // relatóriosToolStripMenuItem
             // 
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(106, 32);
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
+            // 
+            // pessoasfiltroToolStripMenuItem
+            // 
+            this.pessoasfiltroToolStripMenuItem.Name = "pessoasfiltroToolStripMenuItem";
+            this.pessoasfiltroToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pessoasfiltroToolStripMenuItem.Text = "Pessoas(Filtro)";
+            this.pessoasfiltroToolStripMenuItem.Click += new System.EventHandler(this.pessoasfiltroToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -120,6 +130,7 @@
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pessoasfiltroToolStripMenuItem;
     }
 }
 
